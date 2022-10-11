@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace KPhoen\RulerZBundle;
 
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -17,5 +18,12 @@ class KPhoenRulerZBundle extends Bundle
 
         $container->addCompilerPass(new Compiler\TargetsPass());
         $container->addCompilerPass(new Compiler\OperatorsPass());
+    }
+    
+    public function getContainerExtension(): ?ExtensionInterface
+    {
+        $class = $this->getContainerExtensionClass();
+
+        return new $class();
     }
 }
