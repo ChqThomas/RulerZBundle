@@ -18,12 +18,4 @@ class KPhoenRulerZBundle extends Bundle
         $container->addCompilerPass(new Compiler\TargetsPass());
         $container->addCompilerPass(new Compiler\OperatorsPass());
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getContainerExtension()
-    {
-        return new DependencyInjection\KPhoenRulerZExtension();
-    }
 }
