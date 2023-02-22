@@ -43,7 +43,7 @@ class CacheClearCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $cacheDir = $this->cacheDir;
         $filesystem = $this->filesystem;
@@ -56,5 +56,7 @@ class CacheClearCommand extends Command
             $filesystem->remove($cacheDir);
             $filesystem->mkdir($cacheDir);
         }
+        
+        return Command::SUCCESS;
     }
 }
