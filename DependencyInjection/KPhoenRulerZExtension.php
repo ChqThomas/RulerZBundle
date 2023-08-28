@@ -13,7 +13,7 @@ class KPhoenRulerZExtension extends Extension
 {
     private $supportedTargets = ['native', 'doctrine', 'doctrine_dbal', 'eloquent', 'pomm', 'elastica', 'elasticsearch'];
 
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $config = $this->processConfiguration($this->getConfiguration($configs, $container), $configs);
 

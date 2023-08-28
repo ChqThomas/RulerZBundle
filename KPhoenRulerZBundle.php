@@ -12,14 +12,14 @@ use KPhoen\RulerZBundle\DependencyInjection\Compiler;
 
 class KPhoenRulerZBundle extends Bundle
 {
-    public function build(ContainerBuilder $container)
+    public function build(ContainerBuilder $container): void
     {
         parent::build($container);
 
         $container->addCompilerPass(new Compiler\TargetsPass());
         $container->addCompilerPass(new Compiler\OperatorsPass());
     }
-    
+
     public function getContainerExtension(): ?ExtensionInterface
     {
         $class = $this->getContainerExtensionClass();
