@@ -32,7 +32,7 @@ class CacheClearCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('rulerz:cache:clear')
@@ -42,6 +42,8 @@ class CacheClearCommand extends Command
 
     /**
      * {@inheritdoc}
+     *
+     * @return int
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
